@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="asset/css/style-00.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<header>
+			<h1>My First site</h1>
+			<p>In this example, we are building a basic layout template.</p>
+			<p>
+				This uses the idea of rows and columns, where a row comprises of 1 or
+				more columns.
+			</p>
+
+			<p>
+				We could use Bootstrap, CSS-Grid or CSS-Flexbox. However, this example
+				is based on the simple idea of using percentage widths to control how
+				columns behave across the page.
+			</p>
+
+			<p>
+				<strong>NB:</strong> The columns expand but don't stack up. That is in
+				the next example
+			</p>
+		</header>
+
+		<main>
+			<!-- 1st row, one coloum across -->
+			<section class="row">
+				<article class="col-100">
+					<p>Row 1 Column 1 (100% wide)</p>
+				</article>
+			</section>
+			<br />
+
+			<!-- 2nd row, two columns across -->
+			<section class="row">
+				<article class="col-50">
+					<p>Row 2 Column 1 (50% wide)</p>
+				</article>
+				<article class="col-50">
+					<p>Row 2 Column 2 (50% wide)</p>
+				</article>
+			</section>
+
+			<!-- 3rd row, 3 columns across -->
+			<section class="row">
+				<article class="col-33">
+					<p>Row 3 Column 1 (33% wide)</p>
+				</article>
+				<article class="col-33">
+					<p>Row 3 Column 2 (33% wide)</p>
+				</article>
+				<article class="col-33">
+					<p>Row 3 Column 2 (33% wide)</p>
+				</article>
+			</section>
+		</main>
+
+		<footer>
+			<h4>&copy Komal, 2024</h4>
+		</footer>
+	</body>
+</html>

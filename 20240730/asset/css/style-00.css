@@ -1,0 +1,45 @@
+* {
+	/* margin: 0; */
+	box-sizing: border-box;
+}
+
+body {
+	background-color: snow;
+	margin: 0;
+}
+
+header,
+footer {
+	background-color: bisque;
+	border: 2px solid black;
+	margin: 5px 5px;
+}
+.row::after {
+	background-color: palevioletred;
+
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.col-100 {
+	text-align: center;
+	background-color: lightblue;
+	width: 100%;
+	border: 1px solid red;
+}
+
+.col-50 {
+	text-align: center;
+	background-color: palegoldenrod;
+	width: 50%;
+	float: left;
+	border: 1px solid red;
+}
+.col-33 {
+	text-align: center;
+	background-color: lightcyan;
+	width: 33.33%;
+	float: left;
+	border: 1px solid red;
+}
