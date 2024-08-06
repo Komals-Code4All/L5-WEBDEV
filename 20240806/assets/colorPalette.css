@@ -1,0 +1,11 @@
+/* define a set of colours for use in the main style.css file */
+
+:root {
+	--defaultTxtColor: dodgerblue;
+	--highContrastTxt: darkblue;
+	--backgroundColor: beige;
+
+	--bgHeadings: rgb(61, 14, 189);
+	--transPurple: rgb(183, 149, 228, 0.4); /* transparent purple */
+	--transRed: rgb(237, 120, 120, 0.5); /* transparent red */
+}

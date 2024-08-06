@@ -1,0 +1,58 @@
+/* sample code showing externally defined variables. */
+
+/* import the external colour palette file */
+@import url(colorPalette.css);
+
+body {
+	color: var(--defaultTxtColor);
+	background-color: var(--backgroundColor);
+}
+
+/* H1 and H2 use the same color codes */
+/* To change them means having to change in two places. */
+h1 {
+	color: green;
+	font-size: 2rem;
+}
+
+h2 {
+	color: green;
+	font-size: 1.5rem;
+}
+
+h3 {
+	background-color: var(--bgHeadings);
+}
+
+/* <H5> and <p> use the externally defined variables */
+/* If the palette needs changing, simply change it once in the external file */
+h5 {
+	color: var(--defaultTxtColor);
+	background-color: var(--bgHeadings);
+}
+
+p {
+	color: var(--defaultTxtColor);
+}
+
+footer {
+	color: var(--defaultTxtColor);
+	background-color: var(--transPurple);
+}
+
+.boxRed {
+	height: 250px;
+	width: 250px;
+	color: var(--defaultTxtColor);
+	background-color: var(--transRed);
+}
+
+.boxPurple {
+	height: 250px;
+	width: 250px;
+	background-color: var(--transPurple);
+}
+
+.boxPurple p {
+	color: var(--highContrastTxt);
+}
