@@ -1,0 +1,34 @@
+
+Collection of previous L5 learners Project 1 websites.
+---------------------------------------------------------
+
+Cristian
+https://cristihell23.github.io/Milestone-Project-1/
+
+Susana 
+https://susanaviruglio.github.io/DiscoverGranada/
+
+Jamie
+https://github.com/JAEG99/Lake-District/deployments
+
+Adelle
+https://adelleking.github.io/Tribe/
+
+Hanna
+https://hh859.github.io/swimming-club/
+
+
+
+Keep in mind : 
+
+- Project 1 is simply HTML and CSS.
+    - you can use JavaScript, but it is not a requirement.
+
+- As a minimum you need just 3 pages: Home, ContactUs and AboutUs.
+
+- Test all your links.
+
+- Check how your site looks on mobile, table and PC screens.
+    - paste your GutHub URL in the site below , and take a screen shot of teh 4 devices it shows you.
+    - https://ui.dev/amiresponsive
+
