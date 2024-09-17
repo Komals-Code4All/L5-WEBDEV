@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    
+            <header>
+                <h1>Page Heading</h1>
+            </header>
+
+        <main>
+
+            <section>
+              <article>
+                   <h1 id="firstHeading">Some Heading</h1>
+                </article>
+            </section>
+        
+
+            <section>
+                <article>
+
+                    <ul>
+                        <li id="studentName"></li>
+ 
+                    </ul>
+
+                  </article>
+              </section>
+        </main>
+
+
+
+
+<script>
+
+Students = ["Albert", "Betty", "Carl", "David"]
+
+
+// document.getElementById("firstHeading").innerHTML = "Hello Class";
+// document.getElementById("firstPara").innerHTML = "Lorem ipsom lmlmsdl msld msl mlsm lsm amsldHello Class";
+
+// for (student in Students) {
+//     document.write(Students[student])
+// }
+
+console.log(Students);
+
+
+
+for (let student in Students) {
+
+    document.getElementById("studentName").innerHTML = Students[student];
+    
+    console.log(student);
+    console.log(Students[student]);
+
+}
+
+
+let myHeading = document.getElementById("firstHeading").innerHTML;
+    console.log(myHeading);
+
+</script>
+
+</body>
+</html>
