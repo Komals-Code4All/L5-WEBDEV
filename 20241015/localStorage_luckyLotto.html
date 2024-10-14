@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+		<style>
+			.ball {
+				height: 50px;
+				width: 50px;
+				font-size: x-large;
+				background-color: gold;
+				color: chocolate;
+				border-radius: 50%;
+				display: inline-block;
+				text-decoration: none;
+				text-align: center;
+				vertical-align: middle;
+			}
+			#message {
+				color: blue;
+				font-size: 1.5em;
+			}
+		</style>
+	</head>
+	<body>
+		<button onclick="pickLotto()">Pick Numbers</button>
+		<button onclick="clearLotto()">Clear Numbers</button>
+
+		<br /><br />
+
+		<div id="result"></div>
+
+		<br /><br />
+
+		<div id="message">Use the buttons to pick 6 random numbers.</div>
+
+		<script>
+			function clearLotto() {
+				localStorage.removeItem("lotto");
+				document.getElementById("result").innerHTML = "";
+				document.getElementById("message").innerHTML = "Lotto Numbers cleared";
+				displayLotto();
+			}
+
+			function displayLotto() {
+				// read local storage and build a <ul> list
+
+				// local storeage variable are read in as strings
+				let luckyDip = localStorage.getItem("lotto");
+
+				// split the string, into an array of its parts on ','
+				luckyDip = luckyDip.split(",");
+
+				// build a HTML list using the split array
+				let numList = ``;
+				for (number in luckyDip) {
+					numList += `<li class="ball">${luckyDip[number]}</li>`;
+				}
+
+				// add the <ul>..</ul> tags
+				document.getElementById("result").innerHTML = `<ul>${numList}</ul>`;
+
+				document.getElementById("message").innerHTML = "It Could Be You!";
+			}
+
+			function pickLotto() {
+				// generate random numbers
+				let luckyDip = [];
+
+				// randomly generate 6 numbers from 1 to 50
+				for (let x = 1; x < 7; x++) {
+					luckyDip.push(Math.floor(Math.random() * 49) + 1);
+				}
+
+				// save teh numbers array to local storage
+				localStorage.setItem("lotto", luckyDip);
+				displayLotto();
+			}
+
+			// --------------------------------------------------------------
+			// Check browser support
+			if (typeof Storage == "undefined") {
+				document.getElementById("message").innerHTML =
+					"Sorry, your browser does not support Web Storage...";
+			}
+			// --------------------------------------------------------------
+		</script>
+	</body>
+</html>

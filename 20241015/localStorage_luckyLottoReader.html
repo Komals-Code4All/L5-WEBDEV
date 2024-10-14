@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+		<style>
+			.ball {
+				height: 50px;
+				width: 50px;
+				font-size: x-large;
+				background-color: gold;
+				color: chocolate;
+				border-radius: 50%;
+				display: inline-block;
+				text-decoration: none;
+				text-align: center;
+				vertical-align: middle;
+			}
+			#message {
+				color: blue;
+				font-size: 1.5em;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Lucky Lotto Reader</h1>
+		<p>
+			For this to work, you must first generate Lucky Dip numbers using the
+			related
+			<a href="localStorage_luckyLotto.html" target="_blank">html</a> page.
+		</p>
+		<button onclick="displayLotto()">Fetch Lucky Numbers</button>
+
+		<br /><br />
+
+		<div id="result"></div>
+
+		<br /><br />
+
+		<div id="message">Use the buttons to pick 6 random numbers.</div>
+
+		<script>
+			function displayLotto() {
+				// read local storage and build a <ul> list
+
+				// local storeage variable are read in as strings
+				let luckyDip = localStorage.getItem("lotto");
+				if (luckyDip != null) {
+					// split the string, into an array of its parts on ','
+					luckyDip = luckyDip.split(",");
+
+					// build a HTML list using the split array
+					let numList = ``;
+					for (number in luckyDip) {
+						numList += `<li class="ball">${luckyDip[number]}</li>`;
+					}
+
+					// add the <ul>..</ul> tags
+					document.getElementById("result").innerHTML = `<ul>${numList}</ul>`;
+
+					document.getElementById("message").innerHTML = "It Could Be You!";
+				} else {
+					document.getElementById("message").innerHTML = "Nothing to display";
+				}
+			}
+
+			// --------------------------------------------------------------
+			// Check browser support
+			if (typeof Storage == "undefined") {
+				document.getElementById("message").innerHTML =
+					"Sorry, your browser does not support Web Storage...";
+			}
+			// --------------------------------------------------------------
+		</script>
+	</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<!-- 
+Program to show use of browser's local storage to save & restore data input from a user
+
+Unlike JavaScrpt variables that are lost when the window is closed, local storage 
+can save data even after browser is closed. 
+
+-->
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+		<style>
+			#message {
+				color: blue;
+				font-size: 1.5em;
+			}
+		</style>
+	</head>
+	<body>
+		<button onclick="inputUserId()">Input UserID</button>
+		<button onclick="displayUserId()">Display User Id</button>
+		<button onclick="clearUserId()">Clear UserID</button>
+
+		<br /><br />
+
+		<div id="message">Click the buttons</div>
+
+		<script>
+			function clearUserId() {
+				// delete the locally stored variable
+				localStorage.removeItem("userName");
+				document.getElementById("message").innerHTML = "User Id cleared";
+			}
+
+			function displayUserId() {
+				// read and display locally stored variable
+				document.getElementById("message").innerHTML =
+					localStorage.getItem("userName");
+			}
+
+			function inputUserId() {
+				// prompt user to input userId
+				let userName = window.prompt("Enter User Id:");
+				if (userName != null) {
+					// Store input
+					localStorage.setItem("userName", userName);
+				}
+
+				document.getElementById("message").innerHTML = "User Id saved";
+			}
+
+			// --------------------------------------------------------------
+			// Check browser support
+			if (typeof Storage == "undefined") {
+				document.getElementById("message").innerHTML =
+					"Sorry, your browser does not support Web Storage...";
+			}
+			// --------------------------------------------------------------
+		</script>
+	</body>
+</html>
